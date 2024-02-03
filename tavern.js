@@ -1,20 +1,19 @@
 
 
-
 $(document.body).ready(function () {
 
   // load the trivia from the server
   $.ajax({
-    url: 'patrons_full.csv'
-  }).done(function(content) {
+    url: 'taverns.csv'
+  }).done(function(tavern) {
+
+    // normalize the line breaks, then split into lines
+    var lines = tavern.replace(/\r\n|\r/g, '\n').trim().split('\n');
     var randomNumber;
     var lastRandomNumber;
-    // normalize the line breaks, then split into lines
-    var lines = content.replace(/\r\n|\r/g, '\n').trim().split('\n');
-
     // only set up the click handler if there were lines found
     if (lines && lines.length) {
-      $('#showInnPatron').on('click', function () {
+      $('#InnGen').on('click', function () {
         // loop to prevent repeating the last random number
         while (randomNumber === lastRandomNumber) {
           randomNumber = parseInt(Math.random() * lines.length);
@@ -27,24 +26,20 @@ $(document.body).ready(function () {
         // show the corresponding line
         var line = lines[randomNumber];
         var parts = line.split(",");
-        var race = parts[1];
-        var PNs= parts[2];
-        $('#patron').text(parts[0]);
-        $('#race').text(race);
-        $('#gender').text(PNs);
-        $('#quirk').text(parts[3]);
-        var img = document.getElementById("npc_image");
+        var name = parts[0];
+        var desc= parts[1];
+        $('#tavern_name').text(name);
+        $('#tavern_desc').text(desc);
+
+        var img = document.getElementById("TavernImage");
         $.ajax({
-        url: ("lists/" + race+PNs+"List.csv")
-        }).done(function(image_text_file) {
+        url: ("lists/tavernsList.csv")
+        }).done(function(image_tavern_file) {
         // normalize the line breaks, then split into lines
-            var lines = image_text_file.replace(/\r\n|\r/g, '\n').trim().split('\n');
+            var lines = image_tavern_file.replace(/\r\n|\r/g, '\n').trim().split('\n');
             i = Math.floor(Math.random()*lines.length);
             img.src = lines[i];//(imgspath+files[i]);
-            //$('#quirk').text(lines[i])
         });
-        //$('#quirk').text(lines[0]);
-        //img.src = "Elf/He/dusk elf.png";
       });
     }
   });

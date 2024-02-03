@@ -19,7 +19,6 @@
     background-color:#8B4513;
     color:#FFEFD5;
     border:2px solid #FFEFD5;
-
     border-radius:10px;
     padding:15px;
     margin: 0;
@@ -78,13 +77,16 @@
     </style>
     <script data-require="jquery" data-semver="2.1.1" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="script.js"></script>
+    <script src="tavern.js"></script>
+    <script src="owner.js"></script>
+
   </head>
 
   <body background= "inn.png">
 
     <h1 style="font-size: 90px; font-family: Gabriola; color:#FFEFD5; text-align: center;">Tavern Generator</h1>
     <h3 class="custom">Click the button below to generate an inn or tavern patron for any table-top role playing game.</h3>
-    <div style = "text-align: center;"> <button type="button" class="button" id="showInnPatron">Generate Inn Patron</button></div>
+    <div style = "text-align: center;"> <button type="button" class="button" id="showInnPatron" onclick="content()">Generate Tavern Patron</button></div>
 
     <p><br></p>
     <div class="row">
@@ -95,7 +97,7 @@
     </div>
      <p><br></p>
     <div class ="text_box">
-      <p class="box_title" ><b>Gender</b></p>
+      <p class="box_title" ><b>Pronouns</b></p>
       <p class = "box_cont" id="gender"></p>
     </div>
      <p><br></p>
@@ -113,7 +115,46 @@
       <p class = "OutlineText"> Right Click to Save Token</p>
     </div>
       </div>
-      <p class="custom"><a href = "https://www.deviantart.com/bergionstyle/art/DND-Tavern-Let-s-drink-975526609">Image from bergion style </a></p>
+    <div style = "text-align: center;"> <button type="button" class="button" id="InnGen" onclick="tavern">Generate Tavern Description</button></div>
+    <p><br></p>
+    <div class="row">
+      <div class="column">
+        <div class ="text_box">
+      <p class="box_title" ><b>Tavern Name</b></p>
+      <p class = "box_cont" id="tavern_name"></p>
+      </div>
+     <p><br></p>
+      <div class ="text_box" style = "height: 200px;">
+      <p class="box_title" ><b>Tavern Description</b></p>
+      <p class = "box_cont" id="tavern_desc"></p>
+    </div>
+      </div>
+      <div class="column">
+        <img id = "TavernImage" src="taverns/tavern1.jpg" />
+
+      </div>
+    </div>
+  <p><br></p>
+      <div style = "text-align: center;"> <button type="button" class="button" id="OwnerGen" onclick="owner()">Generate Tavern Bartender</button></div>
+    <p><br></p>
+    <div class="row">
+      <div class="column">
+        <div class ="text_box">
+      <p class="box_title" ><b>Bartender Name</b></p>
+      <p class = "box_cont" id="owner_name"></p>
+      </div>
+     <p><br></p>
+      <div class ="text_box" style = "height: 200px;">
+      <p class="box_title" ><b>Bartender Description</b></p>
+      <p class = "box_cont" id="owner_desc"></p>
+    </div>
+      </div>
+      <div class="column">
+        <img id = "ownerImage" src="owners/owner1.png" />
+
+      </div>
+    </div>
+    <p class="custom"><a href = "https://www.deviantart.com/bergionstyle/art/DND-Tavern-Let-s-drink-975526609">Image from bergion style </a></p>
 
   </body>
 

@@ -13,8 +13,8 @@ def get_list(path, out_path):
     f.close()
 
 def main():
-    path ="Human/She"
-    out_path = "lists/HumanSheList.csv"
+    path ="owners"
+    out_path = "lists/ownersList.csv"
     get_list(path, out_path)
 if __name__ == '__main__':
     main()
