@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8" />
+    <title>inn</title>
+    <style type="text/css">
+    .custom {
+     font-family: Gabriola;
+     color:#FFEFD5;
+     text-align: center;
+      font-size: 30px
+    }
+    .custom:link {
+     color: #FFEFD5;
+
+     }
+    .button {
+    background-color:#8B4513;
+    color:#FFEFD5;
+    border:2px solid #FFEFD5;
+
+    border-radius:10px;
+    padding:15px;
+    margin: 0;
+    position: center;
+    font-family: Gabriola;
+    font-size: 40px;
+
+    }
+    .button:hover {
+    background-color:#FFEFD5;
+    color:#8B4513;
+    border:2px solid #8B4513;
+    }
+    .row {
+      display: flex;
+    }
+    .text_box {
+      border-style: solid;
+      border-radius: 25px;
+      background: #331a00;
+      border-color: #FFEFD5;
+      height: 110px;
+      width: 75%;
+    }
+    .box_title {
+      font-family: Constantia;
+      color:#FFEFD5;
+      text-align: center;
+      font-size: 22px
+    }
+
+    .box_cont {
+      font-family: Constantia;
+      color:#FFEFD5;
+      text-align: center;
+    }
+    .column {
+      flex: 50%;
+    }
+    .OutlineText {
+	 font-family: Gabriola;
+     color:#FFEFD5;
+     font-size: 30px;
+    text-shadow:
+    /* Outline */
+    -1px -1px 0 #331a00,
+    1px -1px 0 #331a00,
+    -1px 1px 0 #331a00,
+    1px 1px 0 #331a00,
+    -2px 0 0 #331a00,
+    2px 0 0 #331a00,
+    0 2px 0 #331a00,
+    0 -2px 0 #331a00; /* Terminate with a semi-colon */
+}
+
+    </style>
+    <script data-require="jquery" data-semver="2.1.1" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+  </head>
+
+  <body background= "inn.png">
+
+    <h1 style="font-size: 90px; font-family: Gabriola; color:#FFEFD5; text-align: center;">Tavern Generator</h1>
+    <h3 class="custom">Click the button below to generate an inn or tavern patron for any table-top role playing game.</h3>
+    <div style = "text-align: center;"> <button type="button" class="button" id="showInnPatron">Generate Inn Patron</button></div>
+
+    <p><br></p>
+    <div class="row">
+      <div class="column">
+    <div class ="text_box">
+      <p class="box_title" ><b>Name</b></p>
+      <p class = "box_cont" id="patron"></p>
+    </div>
+     <p><br></p>
+    <div class ="text_box">
+      <p class="box_title" ><b>Gender</b></p>
+      <p class = "box_cont" id="gender"></p>
+    </div>
+     <p><br></p>
+    <div class ="text_box">
+      <p class="box_title" ><b>Race</b></p>
+      <p class = "box_cont" id="race"></p>    </div>
+     <p><br></p>
+    <div class ="text_box">
+      <p class="box_title" ><b>Quirk</b></p>
+      <p class = "box_cont" id="quirk"></p>    </div>
+     <p><br></p>
+      </div>
+    <div class="column">
+      <img id = "npc_image" src="Elf/She/circle of the land druid.png" />
+      <p class = "OutlineText"> Right Click to Save Token</p>
+    </div>
+      </div>
+      <p class="custom"><a href = "https://www.deviantart.com/bergionstyle/art/DND-Tavern-Let-s-drink-975526609">Image from bergion style </a></p>
+
+  </body>
+
+</html>
